@@ -134,32 +134,32 @@
               </div>
 
 
-              <div class="card text-bg-dark" style="width: 19rem; height: 480px;">
+              <div class="card text-bg-dark" style="width: 19rem; height: 500px;">
                 <div class="card-body">
                   <div class="card-header">
                     <h2>Budget</h2> <br>
                     <div class="d-flex">
-                      <p>Player :</p>
-                      <input type="number" class="mx-5" style="width:80px;">
+                      <p>per Player:</p>
+                      <input id="per-player-expensive-js" type="number" class="mx-5" style="width:80px;">
                     </div>
                     <br>
-                    <a href="#" class="btn btn-primary px-5">calculate</a>
+                    <a href="#" id="calculate-player-expenxive-js" class="btn btn-primary px-5">calculate</a>
                     <br>
                     <br>
-                    <p>Player Expence $<span> 0 </span></p>
+                    <p>Player Expence $<span id="total-player-expensive-js"> 0 </span></p>
                     <div class="d-flex">
                       <p>Manager:</p>
-                      <input type="number" class="mx-5" style="width:80px;">
+                      <input id="manager-expensive-js" type="number" class="mx-5" style="width:80px;">
                     </div>
                     <br>
                     <div class="d-flex">
                       <p>Coach :</p>
-                      <input type="number" class="mx-5" style="width:80px;">
+                      <input id="coach-expensive-js" type="number" class="mx-5" style="width:80px;">
                     </div>
                     <br>
-                    <a href="#" class="btn btn-primary px-5">calculate total</a>
+                    <a href="#" id="calculate-total-js" class="btn btn-primary px-5">calculate total</a>
                     <br>
-                    <p>Total: $<span></span></p>
+                    <p>Total: $<span id="total-expensive-js">0</span></p>
                   </div>
                 </div>
               </div>
@@ -175,6 +175,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
