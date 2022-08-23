@@ -1,29 +1,33 @@
 // =============== selection section ==================
 
-const counter = 0;
-const selectBtns = document.getElementsByClassName('select-btn')
-for(const selectBtn of selectBtns){
-    selectBtn.addEventListener("click",function(e){
+const selectBtns = document.getElementsByClassName("select-btn")
+for (const selectBtn of selectBtns) {
+    selectBtn.addEventListener("click", function (e) {
         const targetBtn = e.target;
-        const parent = targetBtn.parentNode.parentNode;
-        const targetEventPlayer = parent.querySelector('h2');
+        const parent = targetBtn.parentNode.parentNode
+        const targetEventPlayer = parent.querySelector("h2")
         const targetEventPlayerName = targetEventPlayer.innerText
-        if(counter >= 5){
-            alert("you can't select more than five player");
+        const counter = (document.getElementById("ol").childNodes.length) - 1;
+        console.log(counter)
+        if (counter >= 5) {
+            alert("You Can't Select More Then 5 Player")
         }
-        else{
+        else {
             createNewLi(targetEventPlayerName)
-            targetBtn.disabled =  true;
-            targetBtn.classList.add("bg-danger");
-            counter += 1;
+
+            targetBtn.disabled = true;
+
+            targetBtn.classList.add("bg-secondary");
+            
         }
     })
 }
-function createNewLi(text){
-    const li = document.createElement("li");
+
+function createNewLi(text) {
+    const li = document.createElement("li")
     li.innerText = text;
-    const ol = document.getElementById("ol");
-    ol.appendChild(li);
+    const ol = document.getElementById("ol")
+    ol.appendChild(li)
 }
 
 
@@ -37,11 +41,15 @@ function inputValueById(targetedElementId) {
     return inputValue;
 }
 
-const totalPlayer = 5;
+
 const playerExpensiveCalculate = document.getElementById('calculate-player-expenxive-js')
 playerExpensiveCalculate.addEventListener('click', function () {
     const perPlayerExpensive = inputValueById('per-player-expensive-js')
-    if (perPlayerExpensive >= 0) {
+    if (perPlayerExpensive >= 0)
+    
+    {
+        const totalPlayer = parseInt((document.getElementById("ol").childNodes.length) - 1);
+
         const calculate = totalPlayer * perPlayerExpensive;
         const totalPlayerExpensive = document.getElementById('total-player-expensive-js');
         totalPlayerExpensive.innerText = calculate;
