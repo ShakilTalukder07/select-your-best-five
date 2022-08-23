@@ -11,6 +11,33 @@
 //     finalCost.innerText = managerCostNumber + coachCostNumber;
 // })
 
+const counter = 0;
+const selectBtns = document.getElementsByClassName('select-btn')
+for(const selectBtn of selectBtns){
+    selectBtn.addEventListener("click",function(e){
+        const targetBtn = e.target;
+        const parent = targetBtn.parentNode.parentNode;
+        const targetEventPlayer = parent.querySelector('h5');
+        const targetEventPlayerName = targetEventPlayer.innerText
+        if(counter >= 5){
+            alert("you can't select more than five player");
+        }
+        else{
+            createNewLi(targetEventPlayerName)
+            targetBtn.disabled =  true;
+            target.classList.add("bg-danger");
+            counter += 1;
+        }
+    })
+}
+function createNewLi(text){
+    const li = document.createElement("li");
+    li.innerText = text;
+    const ol = document.getElementById("ol");
+    ol.appendChild(li);
+}
+
+
 // ------------- comon function ---------------
 function inputValueById(targetedElementId){
     const inputFeildElement = document.getElementById(targetedElementId);
